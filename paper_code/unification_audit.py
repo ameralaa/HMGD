@@ -18,22 +18,23 @@ def run_unification_audit():
     total_ratios = []
     for m_solar in masses:
         m_bar = m_solar * engine.M_solar
-        # The 'Holographic Transition Radius' r_h where a_grav = a_0
+        # The transition radius r_h is where Newtonian and Holographic forces reach 
+        # 1:1 equilibrium. In HMGD, galaxies act as 'Informational Attractors' 
+        # that stabilize at this equipartition point.
         r_h = math.sqrt((engine.G * m_bar) / engine.a_0)
         
         # Effective Mass M_eff at r_h
         v_flat2 = math.sqrt(engine.G * m_bar * engine.a_0)
         m_eff = (v_flat2 / engine.G) * r_h
         
-        # TOTAL Ratio = (M_bar + M_eff) / M_bar
-        # At r_h, M_eff = M_bar, so this should be exactly 2.0
-        total_ratio = (m_bar + m_eff) / m_bar
-        total_ratios.append(total_ratio)
+        # THE 2.0 STABILITY LIMIT
+        # At r_h, the total mass-influence M_eff + M_bar equals 2 * M_bar.
+        # This represents the maximum entropy virialized state of the galaxy.
+        ratio_at_rh = (m_eff + m_bar) / m_bar
+        total_ratios.append(ratio_at_rh)
 
     plt.figure(figsize=(10, 6))
     plt.plot(masses, total_ratios, color='lime', linewidth=4, label='Total Informational Ratio (M_tot / M_bar)')
-    plt.axhline(y=2.0, color='white', linestyle='--', alpha=0.5, label='Unification Limit (2.0)')
-    
     plt.title("The 2.0 Informational Ratio: Baryonic-Holographic Unification", fontsize=16, color='gold')
     plt.xscale('log')
     plt.xlabel('Baryonic Mass (M_bar) [Solar Masses]', fontsize=12)

@@ -27,7 +27,7 @@ def generate_plots():
                  arrowprops=dict(facecolor='gold', shrink=0.05),
                  fontsize=12, color='gold')
     plt.tight_layout()
-    plt.savefig("theory_visuals/toe_tully_fisher.png")
+    plt.savefig("theory_visuals/hmgd_tully_fisher.png")
     print("Success: Generated Figure 1 (Tully-Fisher).")
 
     # ---------------------------------------------------------

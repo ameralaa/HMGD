@@ -26,8 +26,10 @@ def model_agc114905():
     # by the external background field (g_ext) from the cosmic filament.
     g_internal = (engine.G * m) / (r**2)
     
-    # Axiomatic EFE: g_ext is tied to the universal baryonic density (Omega_b ~ 0.04)
-    # Formula: g_ext = Omega_b * a_0 (Derived in Appendix Section 1.4)
+    # ENVIRONMENT PROXY: g_ext = 0.04 * a_0
+    # No galaxy is isolated. The '0.04' factor is derived from the universal 
+    # baryon density fraction (Omega_b), representing the minimum gravitational 
+    # 'noise floor' of the cosmic web in which galaxies are embedded.
     g_ext = 0.04 * engine.a_0 
     suppression_factor = 1.0 / math.sqrt(1.0 + (g_ext / g_internal)**2)
     

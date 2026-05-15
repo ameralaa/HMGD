@@ -37,7 +37,7 @@ def generate_rotation_curves():
     plt.legend(ncol=2)
     
     plt.tight_layout()
-    plt.savefig("theory_visuals/toe_rotation_curves.png")
+    plt.savefig("theory_visuals/hmgd_rotation_curves.png")
     print("Success: Generated Rotation Curve evolution plots.")
 
 if __name__ == "__main__":
